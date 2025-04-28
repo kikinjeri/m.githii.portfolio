@@ -1,25 +1,20 @@
 {
-  "name": "m.githii.portfolio",
+  "name": "m.githii.portfoliot",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "start": {
-    "type": "module",
-    "script": "app.js"
+  "directories": {
+    "lib": "lib"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kikinjeri/m.githii.portfolio.git"
+  "scripts": {
+    "test": "node ./test/sample.js",
+    "start": "node app.js",
+    "type": "module"
   },
-  
-  "author": "MG",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kikinjeri/m.githii.portfolio/issues"
-  },
-  "homepage": "https://github.com/kikinjeri/m.githii.portfolio#readme",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "@inquirer/prompts": "^7.5.0",
-    "inquirer": "^12.6.0"
+    "inquirer": "^8.2.4"
   }
 }
