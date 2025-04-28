@@ -1,35 +1,29 @@
-const fs = require('fs');
-const profileDataArgs = process.argv.slice(2);
-const [name, title, github] = profileDataArgs;
+import inquirer from 'inquirer';
 
 
 
-//cconst [name, github] = profileDataArgs;
+// const fs = require('fs');
+// const generatePage = require('./src/page-template');
 
-//const generatePage = (userName, githubName)=> `Name: ${userName}, Github: ${githubName}`;
-//console.log(generatePage('Mwihaki', 'kikinjeri'));
+// const pageHTML = generatePage(name, github);
 
-const generatePage = (name, github, title) => {
-  return `
-  <!DOCTYPE html> 
-  <html lang="en"> 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio Demo</title>
-  </head>
+// fs.writeFile('./index.html', pageHTML, err => {
+//   if (err) throw err;
 
-  <body>
-    <h1>${'Mwihaki Githii'},  ${'Junior Web Developer'}</h1>
-    <h2><a href="https://github.com/kikinjeri/m.githii.portfolio.git">Github</a></h2>
-  </body>
-  </html>
-  `;
+//   console.log('Portfolio complete! Check out index.html to see the output!');
+// });
+
+
+const promptUser = () => {
+  return inquirer.prompt([
+    {
+      type: 'input',
+      name: 'name',
+      message: 'what is your name?'
+}
+  ]);
 };
 
-fs.writeFile('index.html', generatePage(name, github), err => {
-  if (err) throw err;
+promptUser().then(answers => console.log(answers));
 
-  console.log('Portfolio complete! Check out index.html to see the output!');
-});
+
